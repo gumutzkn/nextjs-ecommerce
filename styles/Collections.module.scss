@@ -1,0 +1,152 @@
+.hero_container {
+  width: 100%;
+  height: 55vh;
+
+  background-size: cover;
+  background-position: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    color: rgb(242 242 241);
+    font-size: 4rem;
+    font-weight: 700;
+    pointer-events: none;
+  }
+}
+
+.features {
+  margin: 5rem auto;
+  width: 65%;
+  height: 20vh;
+  display: flex;
+  justify-content: space-between;
+
+  .feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__icon {
+      height: 3rem;
+      width: 3rem;
+      background-size: contain;
+      background-repeat: no-repeat;
+
+      &_1 {
+        background-image: url(../public/images/usp1_360x.png);
+      }
+      &_2 {
+        background-image: url(../public/images/usp2_360x.png);
+      }
+      &_3 {
+        background-image: url(../public/images/usp3_360x.png);
+      }
+    }
+
+    &__header {
+      margin-top: 1.5rem;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: rgb(153 153 153);
+      letter-spacing: 0.4px;
+    }
+
+    &__text {
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      color: rgb(153 153 153);
+      width: 60%;
+      line-height: 2.5rem;
+      letter-spacing: 0.4px;
+      text-align: center;
+    }
+  }
+}
+
+.category {
+  // background-color: rebeccapurple;
+  width: 80%;
+  margin: 9rem auto 15rem auto;
+
+  &_header {
+    font-weight: 700;
+    font-size: 2.6rem;
+  }
+
+  .products {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+
+  .product {
+    // background-color: red;
+
+    &__top {
+      height: 42vh;
+      width: 18vw;
+      background-color: yellowgreen;
+      position: relative;
+      background-image: url(../public/images/palm_signet_ring.jpg);
+      background-position: center;
+
+      &_hat {
+        background-image: url(../public/images/hat.jpg);
+        background-size: 80%;
+      }
+
+      .text {
+        position: absolute;
+        top: 5%;
+        left: 5%;
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: rgb(24 24 24);
+      }
+    }
+
+    &__bottom {
+      margin-top: 1.5rem;
+
+      .productname {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+
+      .price {
+        color: rgb(153 153 153);
+        font-size: 1.2rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.purpose {
+  // background-color: yellowgreen;
+  width: 50%;
+  margin: 3rem auto 5rem auto;
+  text-align: center;
+
+  &__img {
+    height: 7vh;
+    margin: 0 auto 4rem auto;
+    width: 11vw;
+    // background-color: red;
+    background-image: url(../public/images/purpose.png);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  &__text {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    letter-spacing: 0.7px;
+    color: #36182e;
+  }
+}

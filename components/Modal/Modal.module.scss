@@ -1,0 +1,166 @@
+/*********** MODAL **************/
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 0 7rem;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 34vw;
+  background-color: rgb(255 255 255);
+  z-index: 1000;
+  transition: all 0.4s ease;
+  transform: translateX(110%);
+  box-shadow: 15px 0 20px 5px #181818;
+
+  &_transform {
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    span {
+      font-size: 2.8rem;
+      letter-spacing: 1px;
+    }
+
+    .cross {
+      cursor: pointer;
+      font-size: 2.5rem;
+      font-weight: 600;
+    }
+  }
+  .products {
+    margin: 5rem 0 8rem 0;
+    height: 24vh;
+    overflow-y: auto;
+  }
+
+  .product {
+    display: flex;
+
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+
+    &__img {
+      width: 8rem;
+      height: 9rem;
+      background-image: url(../../public/images/modal__img.jpg);
+      background-position: center;
+      margin-right: 1rem;
+    }
+
+    &__details {
+      position: relative;
+      flex-grow: 4;
+
+      &_header {
+        span {
+          display: inline-block;
+          font-size: 1.2rem;
+          &:not(:last-child) {
+            margin-bottom: 0.5rem;
+          }
+        }
+
+        .color {
+          font-weight: 700;
+        }
+      }
+
+      .buttons {
+        position: absolute;
+        bottom: 0;
+
+        button {
+          padding: 0.4rem 1rem;
+          border: 1px solid rgb(153 153 153);
+          background-color: transparent;
+          cursor: pointer;
+        }
+
+        span {
+          margin: 0 1rem;
+        }
+      }
+    }
+
+    &__price {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      font-size: 1.2rem;
+
+      .price {
+        margin-top: 0.7rem;
+      }
+
+      .remove {
+        background-color: transparent;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        margin-bottom: 1em;
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .quantity_container {
+    padding-top: 2rem;
+    // margin-top: 24rem;
+    border-top: 1px solid rgb(24 24 24);
+
+    .price {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3rem;
+    }
+
+    .quantity {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      margin-bottom: 2rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+
+      .btn {
+        height: 5.6vh;
+        border: none;
+        letter-spacing: 0.4px;
+        cursor: pointer;
+
+        &:not(:last-child) {
+          margin-bottom: 1rem;
+        }
+      }
+
+      .btn_checkout {
+        background-color: rgb(24 24 24);
+        color: rgb(255 255 255);
+        transition: all 0.2s ease;
+
+        &:hover {
+          background-color: rgb(230 230 230);
+          border-color: rgb(230 230 230);
+        }
+      }
+
+      .btn_continue {
+        color: rgb(24 24 24);
+        border: 1px solid rgb(24 24 24);
+        background-color: #fff;
+      }
+    }
+  }
+}

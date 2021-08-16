@@ -1,7 +1,14 @@
-import '../styles/globals.css'
+import "../styles/globals.scss";
+import { ModalProvider } from "../context/ModalContext";
+import Modal from "../components/Modal/Modal";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <ModalProvider>
+      <Component {...pageProps} />
+      <Modal />
+    </ModalProvider>
+  );
 }
 
-export default MyApp
+export default MyApp;
