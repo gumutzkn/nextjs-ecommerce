@@ -8,7 +8,7 @@ export default function Category({ title, products }) {
       <h1 className={collectionStyle.category_header}>{title}</h1>
       <div className={collectionStyle.products}>
         {products.map((product) => (
-          <Product id={product.id} product={product} />
+          <Product key={product.id} product={product} />
         ))}
       </div>
     </section>

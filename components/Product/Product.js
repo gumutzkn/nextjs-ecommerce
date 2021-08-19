@@ -5,7 +5,6 @@ export default function Product({ product }) {
   const { push } = useRouter();
 
   if (!product) return <div>Waiting...</div>;
-  // product.assets[0].url
 
   const handleRoute = () => {
     push(`/collections/${product.categories[0].slug}/${product.permalink}`);

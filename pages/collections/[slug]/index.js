@@ -43,7 +43,7 @@ export default function Collection({ category, products }) {
     <Layout>
       <HeroContainer title={category.name} type={category.slug} />
       <Features />
-      <Category title={category.name} products={products} />
+      <Category title={category.name} products={products} key={category.id} />
 
       <Purpose />
     </Layout>
