@@ -12,6 +12,7 @@ html {
   font-size: 62.5%;
   font-family: "Quicksand", sans-serif;
   color: rgb(24 24 24);
+  //height: 10vh;
 }
 
 ::-webkit-scrollbar {
@@ -38,6 +39,7 @@ body {
   font-size: 1.4rem;
   font-weight: 400;
   letter-spacing: 0.3px;
+  min-height: 100vh;
 }
 
 .blur {

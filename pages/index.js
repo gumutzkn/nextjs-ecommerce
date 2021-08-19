@@ -1,8 +1,7 @@
 import Navbar from "../components/Navbar/Navbar";
-import styles from "../styles/Home.module.scss";
-
 import { useRouter } from "next/router";
-import { Helmet } from "react-helmet";
+
+import styles from "../styles/Home.module.scss";
 
 export default function Home() {
   const { push } = useRouter();
@@ -13,13 +12,6 @@ export default function Home() {
 
   return (
     <>
-      <Helmet>
-        <body
-          style={{
-            overflowY: "hidden",
-          }}
-        />
-      </Helmet>
       <Navbar />
       <section className={styles.categories}>
         <div className={styles.category} onClick={() => pushOnClick("mens")}>

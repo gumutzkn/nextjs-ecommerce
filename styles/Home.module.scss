@@ -1,12 +1,13 @@
 .categories {
-  height: 93.6vh;
+  overflow-y: hidden;
   display: flex;
-  margin-top: 6rem;
+  //margin-top: 6rem;
   cursor: pointer;
 
   .category {
     width: 50%;
     overflow: hidden;
+    height: 100vh;
     position: relative;
 
     h1 {
