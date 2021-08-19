@@ -3,11 +3,18 @@ import { useModal } from "../../contexts/ModalContext";
 import { useEffect, useRef } from "react";
 import { useCartState } from "../../contexts/CommerceContext";
 import ModalProduct from "./ModalProduct";
+import { useRouter } from "next/router";
 
 export default function Modal() {
+  const { push } = useRouter();
   const ref = useRef();
   const { isOpen, closeModal } = useModal();
-  const { line_items, total_items, subtotal } = useCartState();
+  const {
+    line_items,
+    total_items,
+    subtotal,
+    hosted_checkout_url,
+  } = useCartState();
 
   const isTransformed = isOpen ? `${modal.modal_transform}` : "";
   const isEmpty = line_items.length === 0;
@@ -57,10 +64,16 @@ export default function Modal() {
               <div>{subtotal.formatted_with_symbol}</div>
             </div>
             <div className={modal.buttons}>
-              <button className={`${modal.btn} ${modal.btn_checkout}`}>
+              <button
+                className={`${modal.btn} ${modal.btn_checkout}`}
+                onClick={() => push(`${hosted_checkout_url}`)}
+              >
                 Checkout
               </button>
-              <button className={`${modal.btn} ${modal.btn_continue}`}>
+              <button
+                className={`${modal.btn} ${modal.btn_continue}`}
+                onClick={closeModal}
+              >
                 Continue Shopping
               </button>
             </div>
