@@ -1,6 +1,6 @@
 import navStyles from "./Navbar.module.scss";
 import Link from "next/link";
-import { useModal } from "../../context/ModalContext";
+import { useModal } from "../../contexts/ModalContext";
 
 export default function Navbar() {
   const { setIsOpen, openModal } = useModal();

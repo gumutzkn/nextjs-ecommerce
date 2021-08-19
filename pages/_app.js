@@ -1,14 +1,15 @@
 import "../styles/globals.scss";
-import { ModalProvider } from "../context/ModalContext";
+import { ModalProvider } from "../contexts/ModalContext";
 import Modal from "../components/Modal/Modal";
+import { CommerceProvider } from "../contexts/CommerceContext";
 
-function MyApp({ Component, pageProps }) {
+export default function MyApp({ Component, pageProps }) {
   return (
-    <ModalProvider>
-      <Component {...pageProps} />
-      <Modal />
-    </ModalProvider>
+    <CommerceProvider>
+      <ModalProvider>
+        <Component {...pageProps} />
+        <Modal />
+      </ModalProvider>
+    </CommerceProvider>
   );
 }
-
-export default MyApp;

@@ -83,20 +83,15 @@
   }
 
   .product {
-    // background-color: red;
+    cursor: pointer;
 
     &__top {
       height: 42vh;
       width: 18vw;
-      background-color: yellowgreen;
       position: relative;
-      background-image: url(../public/images/palm_signet_ring.jpg);
+      //background-image: url(../public/images/palm_signet_ring.jpg);
       background-position: center;
-
-      &_hat {
-        background-image: url(../public/images/hat.jpg);
-        background-size: 80%;
-      }
+      background-size: cover;
 
       .text {
         position: absolute;
@@ -127,7 +122,6 @@
 }
 
 .purpose {
-  // background-color: yellowgreen;
   width: 50%;
   margin: 3rem auto 5rem auto;
   text-align: center;
@@ -136,7 +130,6 @@
     height: 7vh;
     margin: 0 auto 4rem auto;
     width: 11vw;
-    // background-color: red;
     background-image: url(../public/images/purpose.png);
     background-size: contain;
     background-position: center;
