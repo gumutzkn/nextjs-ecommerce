@@ -1,11 +1,13 @@
-import { useRouter } from "next/router";
 import Navbar from "../components/Navbar/Navbar";
 import styles from "../styles/Home.module.scss";
 
-export default function Home({ merchant, products, categories }) {
-  const router = useRouter();
+import { useRouter } from "next/router";
+
+export default function Home() {
+  const { push } = useRouter();
+
   const pushOnClick = (target) => {
-    router.push(`/collections/${target}`);
+    push(`/collections/${target}`);
   };
 
   return (

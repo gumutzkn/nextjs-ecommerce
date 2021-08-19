@@ -1,38 +1,52 @@
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useReducer } from "react";
 import commerce from "../lib/commerce";
 
-const CommerceContext = createContext();
+const CartStateContext = createContext();
+const CartDispatchContext = createContext();
 
-export function useCommerce() {
-  return useContext(CommerceContext);
-}
+const SET_CART = "SET_CART";
 
-export function CommerceProvider({ children }) {
-  const [products, setProducts] = useState({});
-  const [merchants, setMerchants] = useState({});
-  const [categories, setCategories] = useState([]);
+const initialState = {
+  total_items: 0,
+  total_unique_items: 0,
+  line_items: [],
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case SET_CART:
+      return { ...state, ...action.payload };
+    default:
+      throw new Error(`Unknown action: ${action.type}`);
+  }
+};
+
+export function CartProvider({ children }) {
+  const [state, dispatch] = useReducer(reducer, initialState);
 
   useEffect(() => {
-    (async () => {
-      const merchants = await commerce.merchants.about();
-      const { data: categories } = await commerce.categories.list();
-      const { data: products } = await commerce.products.list();
-
-      setMerchants(merchants);
-      setCategories(categories);
-      setProducts(products);
-    })();
+    getCart();
   }, []);
 
-  const value = {
-    products,
-    merchants,
-    categories,
+  const setCart = (payload) => dispatch({ type: SET_CART, payload });
+
+  const getCart = async () => {
+    try {
+      const cart = await commerce.cart.retrieve();
+      setCart(cart);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
-    <CommerceContext.Provider value={value}>
-      {children}
-    </CommerceContext.Provider>
+    <CartDispatchContext.Provider value={{ setCart }}>
+      <CartStateContext.Provider value={state}>
+        {children}
+      </CartStateContext.Provider>
+    </CartDispatchContext.Provider>
   );
 }
+
+export const useCartState = () => useContext(CartStateContext);
+export const useCartDispatch = () => useContext(CartDispatchContext);

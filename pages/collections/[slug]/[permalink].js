@@ -1,8 +1,8 @@
 import Layout from "../../../components/Layout";
 import commerce from "../../../lib/commerce";
 import style from "../../../styles/slug.module.scss";
-import { useRouter } from "next/router";
 import parse from "html-react-parser";
+import { useCartDispatch } from "../../../contexts/CommerceContext";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;
@@ -33,7 +33,12 @@ export async function getStaticPaths() {
 }
 
 export default function Product({ product }) {
-  if (!product) return null;
+  const { setCart } = useCartDispatch();
+  console.log(product);
+
+  function addToCart() {
+    commerce.cart.add(product.id).then(({ cart }) => setCart(cart));
+  }
 
   return (
     <Layout>
@@ -43,7 +48,7 @@ export default function Product({ product }) {
           style={{
             backgroundImage: `url(${product.assets[1].url})`,
           }}
-        ></div>
+        />
         <div className={style.product_details}>
           <h1 className={style.product_details_header}>{product.name}</h1>
           <span className={style.price}>
@@ -54,27 +59,29 @@ export default function Product({ product }) {
             <div className={style.feature}>
               <div
                 className={`${style.feature__img} ${style.feature__img_1}`}
-              ></div>
+              />
               <p>15% Off First Order</p>
             </div>
 
             <div className={style.feature}>
               <div
                 className={`${style.feature__img} ${style.feature__img_2}`}
-              ></div>
+              />
               <p>30 Day Returns</p>
             </div>
 
             <div className={style.feature}>
               <div
                 className={`${style.feature__img} ${style.feature__img_3}`}
-              ></div>
+              />
               <p>Worldwide Shipping</p>
             </div>
           </div>
 
           <div className={style.button__container}>
-            <button className={style.add_btn}>Add to Cart</button>
+            <button className={style.add_btn} onClick={addToCart}>
+              Add to Cart
+            </button>
           </div>
 
           <div className={style.details}>

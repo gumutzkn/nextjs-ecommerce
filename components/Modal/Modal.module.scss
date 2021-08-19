@@ -51,8 +51,8 @@
     &__img {
       width: 8rem;
       height: 9rem;
-      background-image: url(../../public/images/modal__img.jpg);
       background-position: center;
+      background-size: cover;
       margin-right: 1rem;
     }
 
@@ -116,12 +116,6 @@
     padding-top: 2rem;
     // margin-top: 24rem;
     border-top: 1px solid rgb(24 24 24);
-
-    .price {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 3rem;
-    }
 
     .quantity {
       display: flex;

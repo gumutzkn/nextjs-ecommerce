@@ -9,23 +9,15 @@ export default function Footer() {
           <p>I'm interested in:</p>
 
           <form className={footerStyles.form}>
-            <label
-              className={footerStyles.custom_checkbox}
-              tabindex="0"
-              aria-label="Womens"
-            >
+            <label className={footerStyles.custom_checkbox}>
               <input type="checkbox" />
-              <span className={footerStyles.checkmark}></span>
+              <span className={footerStyles.checkmark} />
               <span className={footerStyles.label}>Womens</span>
             </label>
 
-            <label
-              className={footerStyles.custom_checkbox}
-              tabindex="0"
-              aria-label="Mens"
-            >
+            <label className={footerStyles.custom_checkbox}>
               <input type="checkbox" />
-              <span className={footerStyles.checkmark}></span>
+              <span className={footerStyles.checkmark} />
               <span className={footerStyles.label}>Mens</span>
             </label>
             <input

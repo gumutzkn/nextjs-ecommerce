@@ -1,9 +1,11 @@
 import navStyles from "./Navbar.module.scss";
 import Link from "next/link";
 import { useModal } from "../../contexts/ModalContext";
+import { useCartState } from "../../contexts/CommerceContext";
 
 export default function Navbar() {
-  const { setIsOpen, openModal } = useModal();
+  const { openModal } = useModal();
+  const { total_items } = useCartState();
 
   return (
     <nav className={navStyles.navbar}>
@@ -33,9 +35,9 @@ export default function Navbar() {
         </Link>
       </div>
       <div className={navStyles.cart} onClick={openModal}>
-        <div className={navStyles.shopping_icon}></div>
+        <div className={navStyles.shopping_icon} />
         <span>
-          Cart <span className={navStyles.quantity}>(0)</span>
+          Cart <span className={navStyles.quantity}>({total_items})</span>
         </span>
       </div>
     </nav>
