@@ -2,15 +2,23 @@ import navStyles from "./Navbar.module.scss";
 import Link from "next/link";
 import { useModal } from "../../contexts/ModalContext";
 import { useCartState } from "../../contexts/CommerceContext";
+import { useState } from "react";
 
 export default function Navbar() {
   const { openModal } = useModal();
   const { total_items } = useCartState();
+  const [isOpen, setIsOpen] = useState(false);
+
+  function handleToggle() {
+    setIsOpen((prevState) => !prevState);
+  }
 
   return (
     <nav className={navStyles.navbar}>
-      <div className={navStyles.menu}>
-        <div className={navStyles.hamburger}></div>
+      <div className={navStyles.menu} onClick={handleToggle}>
+        <div
+          className={`${navStyles.hamburger} ${isOpen ? navStyles.active : ""}`}
+        />
       </div>
       <div className={navStyles.links}>
         <ul>

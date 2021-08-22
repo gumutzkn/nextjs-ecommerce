@@ -22,34 +22,53 @@
   }
 
   .hamburger {
-    width: 3rem;
+    width: 2.7rem;
     height: 2px;
     background-color: #000;
     margin-left: 2rem;
     position: absolute;
     cursor: pointer;
+    transform: rotate(0);
 
     &:before {
       position: absolute;
       top: -7px;
       content: "";
-      width: 3rem;
+      width: 2.7rem;
       height: 2px;
       background-color: #000;
+      transition: ease 0.4s;
     }
 
     &:after {
       position: absolute;
       content: "";
       top: 7px;
-      width: 3rem;
+      width: 1.6rem;
       height: 2px;
       background-color: #000;
+      transition: ease 0.4s;
+    }
+  }
+
+  .active {
+    background-color: transparent;
+
+    &:before,
+    &:after {
+      top: 0;
     }
 
-    //@include breakpoint-max(tablet) {
-    //  display: none;
-    //}
+    &:before {
+      transform: rotate(-45deg);
+      transition: ease 0.4s;
+    }
+
+    &:after {
+      transform: rotate(45deg);
+      transition: ease 0.4s;
+      width: 2.7rem;
+    }
   }
 
   .links {
