@@ -1,11 +1,35 @@
+@import "../../styles/mixins";
+
 .footer {
   height: 54vh;
   padding: 6rem 18.5rem;
   background-color: #f4f3f3;
 
+  @include breakpoint-max(lg-desktop) {
+    padding: 6rem;
+  }
+
+  @include breakpoint-max(desktop) {
+    padding: 6rem 4rem;
+  }
+  @include breakpoint-max(phone) {
+    padding: 6rem 4rem;
+    height: max-content;
+  }
+
+  @include breakpoint-max(mobilelarge) {
+    padding: 6rem 4rem;
+    height: max-content;
+  }
+
   &__top {
     display: flex;
     justify-content: space-between;
+
+    @include breakpoint-max(phone) {
+      flex-direction: column;
+      margin-bottom: 2rem;
+    }
 
     &_form {
       width: 28vw;
@@ -21,6 +45,18 @@
         font-size: 1.4rem;
         font-weight: 300;
         color: rgb(24 24 24);
+      }
+
+      @include breakpoint-max(lg-desktop) {
+        width: 40vw;
+
+        h3,
+        p {
+          font-size: 1.8rem;
+        }
+      }
+      @include breakpoint-max(phone) {
+        width: 100%;
       }
 
       .form {
@@ -47,6 +83,14 @@
           &::placeholder {
             color: #abababa8;
             letter-spacing: 1px;
+
+            @include breakpoint-max(lg-desktop) {
+              font-size: 1.5rem;
+            }
+
+            @include breakpoint-max(tablet) {
+              font-size: 1.4rem;
+            }
           }
         }
 
@@ -61,6 +105,19 @@
           cursor: pointer;
           transition: all ease 0.2s;
 
+          @include breakpoint-max(lg-desktop) {
+            font-size: 1.5rem;
+            width: 10vw;
+            height: 6vh;
+          }
+          @include breakpoint-max(phone) {
+            width: 20vw;
+          }
+
+          @include breakpoint-max(mobilelarge) {
+            width: 30vw;
+          }
+
           &:hover {
             color: rgb(242 242 241);
             background-color: rgb(24 24 24);
@@ -72,6 +129,20 @@
     .offers {
       margin-right: 15rem;
 
+      @include breakpoint-max(lg-desktop) {
+        margin-right: 0;
+      }
+
+      @include breakpoint-max(phone) {
+        margin-bottom: 5rem;
+        margin-top: 8rem;
+      }
+
+      @include breakpoint-max(mobilelarge) {
+        margin-top: 10rem;
+        margin-bottom: 0;
+      }
+
       div {
         &:not(:last-child) {
           margin-bottom: 2.6rem;
@@ -82,11 +153,37 @@
         font-size: 1.4rem;
         margin-bottom: 1rem;
         letter-spacing: 0.4px;
+
+        @include breakpoint-max(lg-desktop) {
+          font-size: 1.8rem;
+        }
+
+        @include breakpoint-max(laptop) {
+          font-size: 1.6rem;
+        }
+
+        @include breakpoint-max(mobilelarge) {
+          font-size: 1.9rem;
+          text-align: center;
+        }
       }
 
       p {
         font-size: 1.3rem;
         letter-spacing: 1px;
+
+        @include breakpoint-max(lg-desktop) {
+          font-size: 1.7rem;
+        }
+
+        @include breakpoint-max(laptop) {
+          font-size: 1.5rem;
+        }
+
+        @include breakpoint-max(mobilelarge) {
+          font-size: 1.7rem;
+          text-align: center;
+        }
       }
     }
   }
@@ -102,6 +199,18 @@
 .custom_checkbox .label {
   font-size: 1.4rem;
   margin: 0 10px;
+
+  @include breakpoint-max(lg-desktop) {
+    font-size: 1.6rem;
+  }
+
+  @include breakpoint-max(laptop) {
+    font-size: 1.5rem;
+  }
+
+  @include breakpoint-max(mobilelarge) {
+    font-size: 1.7rem;
+  }
 }
 
 .custom_checkbox .checkmark {

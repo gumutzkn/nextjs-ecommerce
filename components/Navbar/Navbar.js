@@ -9,6 +9,9 @@ export default function Navbar() {
 
   return (
     <nav className={navStyles.navbar}>
+      <div className={navStyles.menu}>
+        <div className={navStyles.hamburger}></div>
+      </div>
       <div className={navStyles.links}>
         <ul>
           <li>
@@ -34,6 +37,7 @@ export default function Navbar() {
           <a>P&C</a>
         </Link>
       </div>
+
       <div className={navStyles.cart} onClick={openModal}>
         <div className={navStyles.shopping_icon} />
         <span>

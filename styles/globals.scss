@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Cuprum:wght@400;500;600;700&display=swap");
+@import "mixins";
 
 *,
 *::before,
@@ -9,10 +10,29 @@
 }
 
 html {
-  font-size: 62.5%;
+  //font-size: 62.5%;
   font-family: "Quicksand", sans-serif;
   color: rgb(24 24 24);
-  //height: 10vh;
+
+  @include breakpoint-max(phone) {
+    font-size: 50%;
+  }
+
+  @include breakpoint-min(phablet) {
+    font-size: 50%;
+  }
+
+  @include breakpoint-min(tablet) {
+    font-size: 50%;
+  }
+
+  @include breakpoint-min(laptop) {
+    font-size: 52%;
+  }
+
+  @include breakpoint-min(desktop) {
+    font-size: 62.5%;
+  }
 }
 
 ::-webkit-scrollbar {

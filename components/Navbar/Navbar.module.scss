@@ -1,3 +1,5 @@
+@import "../../styles/mixins";
+
 /*********** NAVBAR **************/
 .navbar {
   position: fixed;
@@ -11,9 +13,52 @@
   border-bottom: 1px solid rgb(223, 207, 207);
   justify-content: space-between;
 
+  .menu {
+    display: none;
+
+    @include breakpoint-max(tablet) {
+      display: block;
+    }
+  }
+
+  .hamburger {
+    width: 3rem;
+    height: 2px;
+    background-color: #000;
+    margin-left: 2rem;
+    position: absolute;
+    cursor: pointer;
+
+    &:before {
+      position: absolute;
+      top: -7px;
+      content: "";
+      width: 3rem;
+      height: 2px;
+      background-color: #000;
+    }
+
+    &:after {
+      position: absolute;
+      content: "";
+      top: 7px;
+      width: 3rem;
+      height: 2px;
+      background-color: #000;
+    }
+
+    //@include breakpoint-max(tablet) {
+    //  display: none;
+    //}
+  }
+
   .links {
     margin-left: 3rem;
     // background-color: red;
+
+    @include breakpoint-max(tablet) {
+      display: none;
+    }
 
     ul {
       display: flex;
@@ -39,14 +84,23 @@
       font-size: 3rem;
       font-weight: 700;
     }
+
+    @include breakpoint-max(tablet) {
+      margin-left: 14.5rem;
+    }
+
+    @include breakpoint-max(phone) {
+      margin: 0 0 0 4rem;
+    }
   }
   .cart {
     margin-right: 3rem;
-    width: 5vw;
+    width: 90px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     cursor: pointer;
+    outline: none;
 
     &:hover {
       font-weight: 600;
@@ -58,6 +112,27 @@
       background-image: url(../../public/bag.svg);
       background-size: cover;
       margin-top: -0.2rem;
+    }
+
+    @include breakpoint-max(laptop) {
+      justify-content: flex-end;
+      width: min-content;
+
+      span {
+        display: none;
+      }
+
+      .shopping_icon {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    @include breakpoint-max(tablet) {
+      .shopping_icon {
+        width: 3rem;
+        height: 3rem;
+      }
     }
   }
 }

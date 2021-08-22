@@ -1,14 +1,25 @@
+@import "mixins";
+
 .categories {
   overflow-y: hidden;
   display: flex;
   //margin-top: 6rem;
   cursor: pointer;
 
+  @include breakpoint-max(laptop) {
+    flex-direction: column;
+  }
+
   .category {
     width: 50%;
     overflow: hidden;
     height: 100vh;
     position: relative;
+
+    @include breakpoint-max(laptop) {
+      width: 100%;
+      height: 50vh;
+    }
 
     h1 {
       position: absolute;
@@ -28,6 +39,10 @@
 
       &:hover {
         transform: scale(1.1);
+      }
+
+      @include breakpoint-max(phone) {
+        transform: translateX(-20%);
       }
     }
   }
