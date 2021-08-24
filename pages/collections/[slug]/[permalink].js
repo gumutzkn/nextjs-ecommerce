@@ -40,7 +40,7 @@ export default function Product({ product }) {
   }
 
   return (
-    <Layout>
+    <Layout title={product.name}>
       <main className={style.product__container}>
         <div
           className={style.product_img}

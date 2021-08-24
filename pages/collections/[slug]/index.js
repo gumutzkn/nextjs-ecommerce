@@ -40,7 +40,7 @@ export async function getStaticPaths() {
 export default function Collection({ category, products }) {
   if (!category && !products) return null;
   return (
-    <Layout>
+    <Layout title={category.name}>
       <HeroContainer title={category.name} type={category.slug} />
       <Features />
       <Category title={category.name} products={products} key={category.id} />
