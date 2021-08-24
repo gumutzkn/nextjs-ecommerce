@@ -15,6 +15,12 @@ export default function HamburgerModal() {
       <div className={style.links}>
         <ul onClick={() => setIsResponsiveModalOpen(false)}>
           <li>
+            <Link href="/">
+              <a>Home</a>
+            </Link>
+          </li>
+
+          <li>
             <Link href="/collections/mens">
               <a>Mens</a>
             </Link>
