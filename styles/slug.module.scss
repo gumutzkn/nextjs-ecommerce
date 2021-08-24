@@ -1,3 +1,5 @@
+@import "mixins";
+
 /*********** MAIN **************/
 .product__container {
   height: 92vh;
@@ -6,6 +8,12 @@
   display: flex;
   justify-content: space-around;
 
+  @include breakpoint-max(tablet) {
+    width: 95%;
+    flex-direction: column;
+    height: 150vh;
+  }
+
   .product_img {
     height: 100%;
     width: 50%;
@@ -13,6 +21,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @include breakpoint-max(tablet) {
+      width: 100%;
+    }
   }
 
   .product_details {
@@ -21,10 +33,21 @@
     position: sticky;
     top: 10%;
 
+    @include breakpoint-max(tablet) {
+      width: 100%;
+      margin-top: 3rem;
+      position: relative;
+      top: 0;
+    }
+
     &_header {
       font-size: 2.2rem;
       letter-spacing: 0.5px;
       font-weight: 700;
+
+      @include breakpoint-max(tablet) {
+        font-size: 2.8rem;
+      }
     }
 
     .price {
@@ -32,11 +55,19 @@
       margin: 1rem 0;
       font-size: 1.6rem;
       color: rgb(153 153 153);
+
+      @include breakpoint-max(tablet) {
+        font-size: 1.9rem;
+      }
     }
 
     .features {
       display: flex;
       margin: 6rem 0;
+
+      @include breakpoint-max(tablet) {
+        justify-content: space-around;
+      }
 
       .feature {
         display: flex;
@@ -49,6 +80,10 @@
 
         &:first-child {
           margin-left: 2rem;
+
+          @include breakpoint-max(tablet) {
+            margin-left: 0;
+          }
         }
 
         &__img {
@@ -58,6 +93,11 @@
           background-repeat: no-repeat;
           background-position: center;
           margin-bottom: 1.8rem;
+
+          @include breakpoint-max(tablet) {
+            height: 3.5rem;
+            width: 3.5rem;
+          }
 
           &_1 {
             background-image: url(../public/images/usp1_360x.png);
@@ -77,6 +117,10 @@
           color: rgb(153 153 153);
           font-size: 1.4rem;
           font-weight: 500;
+
+          @include breakpoint-max(tablet) {
+            font-size: 1.7rem;
+          }
         }
       }
     }
@@ -92,11 +136,15 @@
         letter-spacing: 0.7px;
         font-size: 1.4rem;
         border: none;
-        font-weight: 300;
         width: 100%;
         height: 5.4vh;
         cursor: pointer;
         transition: all 0.2s ease;
+
+        @include breakpoint-max(tablet) {
+          font-size: 1.6rem;
+          height: 6.5vh;
+        }
 
         &:hover {
           background-color: rgb(230 230 230);
@@ -115,6 +163,10 @@
         margin-bottom: 2.2rem;
         font-size: 1.5rem;
         font-weight: 700;
+
+        @include breakpoint-max(tablet) {
+          font-size: 2rem;
+        }
       }
 
       li {
@@ -122,6 +174,10 @@
         padding-left: 1rem;
         font-size: 1.4rem;
         font-weight: 300;
+
+        @include breakpoint-max(tablet) {
+          font-size: 1.7rem;
+        }
 
         &:not(:last-child) {
           margin-bottom: 1rem;

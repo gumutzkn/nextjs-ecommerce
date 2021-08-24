@@ -35,7 +35,6 @@ export async function getStaticPaths() {
 
 export default function Product({ product }) {
   const { setCart } = useCartDispatch();
-  console.log(product);
 
   function addToCart() {
     commerce.cart.add(product.id).then(({ cart }) => setCart(cart));

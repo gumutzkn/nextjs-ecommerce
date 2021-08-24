@@ -14,44 +14,46 @@ export default function Navbar() {
   }
 
   return (
-    <nav className={navStyles.navbar}>
+    <>
       <div className={navStyles.menu} onClick={handleToggle}>
         <div
           className={`${navStyles.hamburger} ${isOpen ? navStyles.active : ""}`}
         />
       </div>
-      <div className={navStyles.links}>
-        <ul>
-          <li>
-            <Link href="/collections/mens">
-              <a>Mens</a>
-            </Link>
-          </li>
+      <nav className={navStyles.navbar}>
+        <div className={navStyles.links}>
+          <ul>
+            <li>
+              <Link href="/collections/mens">
+                <a>Mens</a>
+              </Link>
+            </li>
 
-          <li>
-            <Link href="/collections/womens">
-              <a>Womens</a>
-            </Link>
-          </li>
-          <li>
-            <Link href="/collections/goods">
-              <a>Goods</a>
-            </Link>
-          </li>
-        </ul>
-      </div>
-      <div className={navStyles.logo}>
-        <Link href="/">
-          <a>P&C</a>
-        </Link>
-      </div>
+            <li>
+              <Link href="/collections/womens">
+                <a>Womens</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/collections/goods">
+                <a>Goods</a>
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div className={navStyles.logo}>
+          <Link href="/">
+            <a>P&C</a>
+          </Link>
+        </div>
 
-      <div className={navStyles.cart} onClick={openModal}>
-        <div className={navStyles.shopping_icon} />
-        <span>
-          Cart <span className={navStyles.quantity}>({total_items})</span>
-        </span>
-      </div>
-    </nav>
+        <div className={navStyles.cart} onClick={openModal}>
+          <div className={navStyles.shopping_icon} />
+          <span>
+            Cart <span className={navStyles.quantity}>({total_items})</span>
+          </span>
+        </div>
+      </nav>
+    </>
   );
 }

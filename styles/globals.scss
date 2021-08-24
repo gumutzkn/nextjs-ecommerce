@@ -15,7 +15,7 @@ html {
   color: rgb(24 24 24);
 
   @include breakpoint-max(phone) {
-    font-size: 50%;
+    font-size: 48%;
   }
 
   @include breakpoint-min(phablet) {

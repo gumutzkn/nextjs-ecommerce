@@ -47,5 +47,13 @@
     @media (max-width: 30em) {
       @content;
     }
+  } @else if $point == mobilemed {
+    @media (max-width: 23.438em) {
+      @content;
+    }
+  } @else if $point == mobilesmall {
+    @media (max-width: 20em) {
+      @content;
+    }
   }
 }
