@@ -115,7 +115,8 @@
           }
 
           @include breakpoint-max(mobilelarge) {
-            width: 30vw;
+            width: 25vw;
+            font-size: 1.7rem;
           }
 
           &:hover {

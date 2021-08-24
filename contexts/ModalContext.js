@@ -8,6 +8,7 @@ export function useModal() {
 
 export function ModalProvider({ children }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [isResponsiveModalOpen, setIsResponsiveModalOpen] = useState(false);
 
   function closeModal() {
     setIsOpen(false);
@@ -18,12 +19,18 @@ export function ModalProvider({ children }) {
     setIsOpen(true);
     document.body.classList.add("blur");
   }
+  function toggleResponsiveModal() {
+    setIsResponsiveModalOpen((prevState) => !prevState);
+  }
 
   const value = {
     isOpen,
     setIsOpen,
     openModal,
     closeModal,
+    isResponsiveModalOpen,
+    setIsResponsiveModalOpen,
+    toggleResponsiveModal,
   };
 
   return (

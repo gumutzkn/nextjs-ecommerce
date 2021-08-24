@@ -3,7 +3,6 @@ import commerce from "../../../lib/commerce";
 import style from "../../../styles/slug.module.scss";
 import parse from "html-react-parser";
 import { useCartDispatch } from "../../../contexts/CommerceContext";
-import { Helmet } from "react-helmet";
 
 export async function getStaticProps({ params }) {
   const { permalink } = params;

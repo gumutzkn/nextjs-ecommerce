@@ -242,6 +242,9 @@
       width: 20vw;
       height: 13vh;
     }
+    @include breakpoint-max(tablet) {
+      width: 25vw;
+    }
 
     @include breakpoint-max(mobilelarge) {
       width: 45vw;
