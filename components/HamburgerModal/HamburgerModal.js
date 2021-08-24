@@ -6,6 +6,10 @@ import style from "./HamburgerModal.module.scss";
 export default function HamburgerModal() {
   const { isResponsiveModalOpen, setIsResponsiveModalOpen } = useModal();
 
+  function closeModal() {
+    setIsResponsiveModalOpen(false);
+  }
+
   return (
     <div
       className={`${style.hamburger_container} ${
@@ -13,27 +17,27 @@ export default function HamburgerModal() {
       }`}
     >
       <div className={style.links}>
-        <ul onClick={() => setIsResponsiveModalOpen(false)}>
+        <ul>
           <li>
             <Link href="/">
-              <a>Home</a>
+              <a onClick={closeModal}>Home</a>
             </Link>
           </li>
 
           <li>
             <Link href="/collections/mens">
-              <a>Mens</a>
+              <a onClick={closeModal}>Mens</a>
             </Link>
           </li>
 
           <li>
             <Link href="/collections/womens">
-              <a>Womens</a>
+              <a onClick={closeModal}>Womens</a>
             </Link>
           </li>
           <li>
             <Link href="/collections/goods">
-              <a>Goods</a>
+              <a onClick={closeModal}>Goods</a>
             </Link>
           </li>
         </ul>
