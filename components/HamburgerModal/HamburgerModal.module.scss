@@ -1,8 +1,13 @@
 @import "../../styles/mixins";
 
+.hamburger_container {
+  display: none;
+}
+
 @include breakpoint-max(tablet) {
   .hamburger_container {
     position: fixed;
+    display: block;
     top: 0;
     left: 0;
     padding: 0 7rem;
